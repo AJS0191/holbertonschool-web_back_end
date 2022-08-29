@@ -2,6 +2,6 @@
 """Concatenates two strings together."""
 
 
-def add(str: str, str2: str) -> str:
+def concat(str: str, str2: str) -> str:
     """Concatenates two strings together."""
     return str + str2
