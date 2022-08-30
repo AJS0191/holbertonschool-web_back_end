@@ -2,10 +2,11 @@
 """takes str and num returns tuple"""
 
 
-from typing import List, Union, Tuple
+from typing import Callable
 
 
-def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
+def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """returns tuple of str and sq of num"""
-    t = (k, float(v*v))
-    return t
+    def x(float):
+        return float * multiplier
+    return x
