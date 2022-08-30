@@ -3,6 +3,8 @@
 
 
 from typing import List
+
+
 def sum_list(input_list: List[float]) -> float:
     """takes list returns sum"""
     n = 0
