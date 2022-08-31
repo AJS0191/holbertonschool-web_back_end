@@ -13,7 +13,7 @@ async def wait_n(n: int, max_delay: int) -> typing.List[float]:
 
     async def chain(max):
         x = await wait_random(max)
-        waitList.append(x)
+        waitList.append(float(x))
 
     await asyncio.gather(*(chain(max_delay) for l in range(n)))
 
