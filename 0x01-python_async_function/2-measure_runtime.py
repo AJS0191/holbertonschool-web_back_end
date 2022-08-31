@@ -14,5 +14,4 @@ def measure_time(n: int, max_delay: int) -> float:
     curentT = time.perf_counter()
     result = loop.run_until_complete(wait_n(n, max_delay))
     totalTime = time.perf_counter() - curentT
-    
     return totalTime / float(n)
