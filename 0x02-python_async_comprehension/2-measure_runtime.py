@@ -7,8 +7,8 @@ import typing
 
 async def measure_runtime() -> float:
     """measures runtime"""
-    async_comprehension = __import__('1-async_comprehension').async_comprehension
+    async_compre = __import__('1-async_comprehension').async_comprehension
     rt = time.perf_counter()
-    await asyncio.gather(*(async_comprehension() for i in range(4)))
+    await asyncio.gather(*(async_compre() for i in range(4)))
     rt = time.perf_counter() - rt
     return rt
