@@ -2,10 +2,11 @@
 """First stab at asyncio"""
 import asyncio
 import random
+from types import NoneType
 import typing
 
 
-async def async_generator() -> typing.Generator[float, NoneType, NoneType]:
+async def async_generator() -> typing.Generator[float, type[None], type[None]]:
     """waits a random amount of time and returns it"""
     for i in range(10):
         await asyncio.sleep(1)
