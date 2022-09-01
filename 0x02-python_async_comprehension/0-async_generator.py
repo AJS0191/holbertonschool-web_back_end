@@ -2,7 +2,6 @@
 """First stab at asyncio"""
 import asyncio
 import random
-from types import NoneType
 import typing
 
 
