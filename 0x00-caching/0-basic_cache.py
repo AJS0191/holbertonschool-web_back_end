@@ -5,6 +5,7 @@ from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
+    """inherits for BaseCaching has no limit"""
     def __init__(self) -> None:
         super().__init__()
 
