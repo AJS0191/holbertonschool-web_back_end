@@ -5,7 +5,7 @@ from base_caching import BaseCaching
 from collections import deque
 
 
-class LRUCache(BaseCaching):
+class MRUCache(BaseCaching):
     """inherits for BaseCaching has a limit"""
     def __init__(self) -> None:
         """initializes the cache"""
