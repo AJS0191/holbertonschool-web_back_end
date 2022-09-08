@@ -40,7 +40,7 @@ def LRUlisting(queue, newValue, count):
         dict keys"""
         kholder.append(k)
     kholder.sort()
-    rem = kholder[0]
+    rem = kholder[4]
     delKey = queue[rem]
     del queue[rem]
     queue[count] = newValue
