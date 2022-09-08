@@ -48,6 +48,7 @@ def LRUlisting(queue, newValue, count):
 
 
 def LRUcountReplace(queue, newValue, count):
+    """replaces the count for a key being replaced in cache"""
     rem = None
     for k, v in queue.items():
         if v == newValue:
