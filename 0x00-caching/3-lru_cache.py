@@ -28,6 +28,7 @@ class LRUCache(BaseCaching):
     def get(self, key):
         """returns the value of the key from cache"""
         if (key in self.cache_data):
+            LRUcountReplace(self.queue, key, self.count)
             return self.cache_data[key]
         return None
 
