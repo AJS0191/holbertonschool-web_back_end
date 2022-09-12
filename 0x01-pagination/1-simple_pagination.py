@@ -35,10 +35,19 @@ class Server:
         dataSet = self.dataset()
         indexRan = index_range(page, page_size)
         showPages = []
-        size = indexRan[1]
         start = indexRan[0]
+        size = indexRan[1]
 
-        for i in range((size * start), (size * start) + size + 1):
+        if size > len(dataSet):
+            return []
+
+        print(indexRan)
+
+        i = 1
+
+        for i in range(start, size):
+            print(start)
+            print(i)
             showPages.append(dataSet[i])
 
         return showPages
