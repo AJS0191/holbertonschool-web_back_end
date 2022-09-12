@@ -41,13 +41,9 @@ class Server:
         if size > len(dataSet):
             return []
 
-        print(indexRan)
-
         i = 1
 
         for i in range(start, size):
-            print(start)
-            print(i)
             showPages.append(dataSet[i])
 
         return showPages
