@@ -38,7 +38,7 @@ class Server:
         size = indexRan[1]
         start = indexRan[0]
 
-        for i in range((size * start), (size * start) + size):
+        for i in range((size * start), (size * start) + size + 1):
             showPages.append(dataSet[i])
 
         return showPages
