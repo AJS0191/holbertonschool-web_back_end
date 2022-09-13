@@ -54,7 +54,7 @@ class Server:
 
         data = self.get_page(page, page_size)
         pg_size = len(data)
-        pg = index_range(page, page_size)[0]
+        pg = page
         total_pages = int(len(dataSet) / index_range(page, page_size)[1])
 
         if pg_size == 0 or pg == total_pages:
@@ -75,6 +75,7 @@ class Server:
             "prev_page": prev_page,
             "total_pages": total_pages
         }
+
         return details
 
 
