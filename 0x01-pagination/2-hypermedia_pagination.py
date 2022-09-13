@@ -57,7 +57,7 @@ class Server:
         pg = page
         total_pages = int(len(dataSet) / index_range(page, page_size)[1])
 
-        if pg_size == 0 or pg == total_pages:
+        if pg_size == 0 or pg > total_pages:
             next_page = None
         else:
             next_page = pg + 1
