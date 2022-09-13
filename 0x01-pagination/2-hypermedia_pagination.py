@@ -75,6 +75,7 @@ class Server:
             "prev_page": prev_page,
             "total_pages": total_pages
         }
+        return details
 
 
 def index_range(page: int, page_size: int):
