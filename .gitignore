@@ -10,3 +10,6 @@
 0x01-pagination/test.py
 0x01-pagination/__pycache__/*
 0x01-pagination/Popular_Baby_Names.csv
+0x03-Basic_authentication/SimpleAPI/models/__pycache__/*
+0x03-Basic_authentication/SimpleAPI/api/v1/views/__pycache__/*
+0x03-Basic_authentication/SimpleAPI/api/v1/__pycache__/*
