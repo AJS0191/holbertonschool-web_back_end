@@ -24,10 +24,10 @@ class Auth():
 
         if request is None:
             return None
-        
+
         if request.form.get("Authorization"):
             return request.form.get("Authorization")
-        
+
         return None
 
     def current_user(self, request=None) -> TypeVar('User'):
