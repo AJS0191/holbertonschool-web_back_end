@@ -20,4 +20,4 @@ class BasicAuth(Auth):
         if basicSearch is None:
             return None
 
-        return re.split('^Basic ', authorization_header)[0]
+        return re.split('^Basic ', authorization_header)[1]
