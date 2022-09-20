@@ -15,3 +15,4 @@
 0x03-Basic_authentication/SimpleAPI/api/v1/__pycache__/*
 0x03-Basic_authentication/api/__pycache__/*
 *.pyc
+0x03-Basic_authentication/api/v1/views/test.py
