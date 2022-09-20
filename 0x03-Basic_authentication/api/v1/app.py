@@ -10,7 +10,7 @@ import os
 auth = None
 auth = os.environ.get('AUTH_TYPE')
 if auth:
-    if isinstance(auth, BasicAuth):
+    if auth == 'basic_auth':
         from api.v1.auth.basic_auth import BasicAuth
         auth = BasicAuth()
     else:
