@@ -25,8 +25,8 @@ class Auth():
         if request is None:
             return None
 
-        if request.form.get("Authorization"):
-            return request.form.get("Authorization")
+        if request.headers.get("Authorization"):
+            return request.headers.get("Authorization")
 
         return None
 
