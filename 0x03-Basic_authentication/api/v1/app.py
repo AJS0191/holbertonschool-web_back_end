@@ -21,6 +21,7 @@ CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
 @app.before_request
 def before_request():
+    """to be done before each request"""
     LIST = [
         '/api/v1/status/',
         '/api/v1/unauthorized/',
