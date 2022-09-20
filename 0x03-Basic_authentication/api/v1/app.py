@@ -10,12 +10,8 @@ import os
 auth = None
 auth = os.environ.get('AUTH_TYPE')
 if auth:
-    if isinstance(auth, BasicAuth):
-        from api.v1.auth.basic_auth import BasicAuth
-        auth = BasicAuth()
-    else:
-        from api.v1.auth.auth import Auth
-        auth = Auth()
+    from api.v1.auth.auth import Auth
+    auth = Auth()
 
 
 app = Flask(__name__)
