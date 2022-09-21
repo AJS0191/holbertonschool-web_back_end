@@ -19,3 +19,4 @@ class SessionAuth(BasicAuth):
         else:
             sessionId = str(uuid.uuid4())
             self.user_id_by_session_id.update({user_id: sessionId})
+            return sessionId
