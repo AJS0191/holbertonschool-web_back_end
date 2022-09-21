@@ -22,6 +22,7 @@ class SessionAuth(BasicAuth):
             return sessionId
 
     def user_id_for_session_id(self, session_id: str = None) -> str:
+        """gets a user_id based on session"""
         if not session_id or type(session_id) != str:
             return None
 
