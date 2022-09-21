@@ -7,9 +7,10 @@ import uuid
 
 class SessionAuth(BasicAuth):
     """class for session authorizations"""
+    user_id_by_session_id = {}
+
     def __init__(self) -> None:
         super().__init__()
-        self.user_id_by_session_id = {}
 
     def create_session(self, user_id: str = None) -> str:
         """creates a session id for a user id"""
