@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """defines the basic auth class
 """
-from asyncore import read
+
 import base64
 import binascii
 from api.v1.auth.auth import Auth
