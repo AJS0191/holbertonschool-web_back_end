@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """defines the basic auth class
 """
+import base64
+import binascii
 from api.v1.auth.auth import Auth
 import re
 
@@ -21,3 +23,18 @@ class BasicAuth(Auth):
             return None
 
         return re.split('^Basic ', authorization_header)[1]
+
+    def decode_base64_authorization_header(self, base64_authorization_header: str) -> str:
+        """decodes base64"""
+        if not base64_authorization_header:
+            return None
+
+        if type(base64_authorization_header) != str:
+            return None
+
+        try:
+            decoded = base64.b64decode(base64_authorization_header)
+        except binascii.Error:
+            return None
+        else:
+            return decoded.decode('utf-8')
