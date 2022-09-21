@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """defines the basic auth class
 """
+from asyncore import read
 import base64
 import binascii
 from api.v1.auth.auth import Auth
@@ -67,5 +68,16 @@ class BasicAuth(Auth):
             for user in userMatch:
                 if user.is_valid_password(user_pwd):
                     return user
+        except Exception:
+            return None
+
+    def current_user(self, request=None) -> TypeVar('User'):
+        """retrieves the user"""
+        try:
+            authHeader = self.authorization_header(request)
+            b64 = self.extract_base64_authorization_header(authHeader)
+            decode = self.decode_base64_authorization_header(b64)
+            userC = self.extract_user_credentials(decode)
+            return self.user_object_from_credentials(userC[0], userC[1])
         except Exception:
             return None
