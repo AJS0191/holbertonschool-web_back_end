@@ -32,7 +32,7 @@ def view_one_user(user_id: str = None) -> str:
     if user is None:
         abort(404)
 
-    me = request.current_user
+    me = request.current_user.id
     if not me and user_id == me:
         abort(404)
     if me and user_id == me:
