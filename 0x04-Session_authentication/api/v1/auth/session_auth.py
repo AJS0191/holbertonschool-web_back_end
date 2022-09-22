@@ -3,6 +3,7 @@
 """
 from api.v1.auth.basic_auth import BasicAuth
 import uuid
+from models.user import User
 
 
 class SessionAuth(BasicAuth):
@@ -27,3 +28,7 @@ class SessionAuth(BasicAuth):
             return None
 
         return self.user_id_by_session_id.get(session_id)
+
+    def current_user(self, request=None):
+        uID = self.user_id_for_session_id(self.session_cookie(request))
+        return User.get(uID)
