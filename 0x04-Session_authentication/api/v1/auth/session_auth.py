@@ -28,9 +28,3 @@ class SessionAuth(BasicAuth):
             return None
 
         return self.user_id_by_session_id.get(session_id)
-
-    def session_cookie(self, request=None):
-        """gets a cookie from a request session"""
-        if not request:
-            return None
-        return request.cookies.get(os.environ.get('SESSION_NAME'))
