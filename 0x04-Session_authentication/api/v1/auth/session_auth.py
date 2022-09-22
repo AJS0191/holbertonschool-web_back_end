@@ -30,5 +30,6 @@ class SessionAuth(BasicAuth):
         return self.user_id_by_session_id.get(session_id)
 
     def current_user(self, request=None):
+        """returns the current user based on session id cookie"""
         uID = self.user_id_for_session_id(self.session_cookie(request))
         return User.get(uID)
