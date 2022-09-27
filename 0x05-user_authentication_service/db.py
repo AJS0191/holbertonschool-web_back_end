@@ -36,7 +36,6 @@ class DB:
         email_ = email
         hashed_ = hashed_password
         session = self._session
-        print('creating a user')
         user = User(
             id=str(uuid.uuid4()),
             email=email_,
