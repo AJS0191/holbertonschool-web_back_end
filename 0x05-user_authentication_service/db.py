@@ -6,7 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.session import Session
 from sqlalchemy.exc import InvalidRequestError
-from sqlalchemy.orm.exc import NoResultFound
+
 import uuid
 
 from user import Base, User
@@ -65,7 +65,7 @@ class DB:
             if x not in attList:
                 raise InvalidRequestError
 
-        return session.query(User).filter_by(**kwargs).one()
+        return session.query(User).filter_by(**kwargs).first()
 
     def update_user(self, user_id: int, **kwargs) -> None:
         """updates a user with keyword args"""
