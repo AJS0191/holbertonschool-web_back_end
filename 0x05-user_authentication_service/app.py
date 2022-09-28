@@ -22,7 +22,7 @@ def register_user():
         AUTH.register_user(email, password)
     except ValueError:
         return jsonify({"message": "email already registered"}), 400
-    return jsonify({"email": f'{email}'}, {"message": "user created"}), 200
+    return jsonify({"email": f'{email}', "message": "user created"}), 200
 
 
 if __name__ == "__main__":
