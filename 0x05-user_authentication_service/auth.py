@@ -5,6 +5,7 @@ import bcrypt
 from db import DB
 from user import User, Base
 from sqlalchemy.orm import sessionmaker, scoped_session
+import uuid
 
 
 def _hash_password(password: str) -> bytes:
@@ -38,3 +39,7 @@ class Auth:
             return bcrypt.checkpw(password.encode('utf-8'),
                                   user.hashed_password)
         return False
+
+    def _generate_uuid() -> str:
+        """generates a uuid"""
+        return str(uuid.uuid4())
