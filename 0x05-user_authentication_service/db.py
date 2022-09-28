@@ -12,6 +12,14 @@ import uuid
 
 from user import Base, User
 
+attList = [
+            'id',
+            'email',
+            'hashed_password',
+            'session_id',
+            'reset_token'
+        ]
+
 
 class DB:
     """DB class
@@ -56,16 +64,24 @@ class DB:
 
     def find_user_by(self, **kwargs) -> User:
         """find a user by given attribute"""
-        attList = [
-            'id',
-            'email',
-            'hashed_password',
-            'session_id',
-            'reset_token'
-        ]
+
         session = self.__session
         for x in kwargs.keys():
             if x not in attList:
                 raise InvalidRequestError
 
         return session.query(User).filter_by(**kwargs).one()
+
+    def update_user(self, user_id, **kwargs) -> None:
+        """updates a user with keyword args"""
+        user = self.find_user_by(id=user_id)
+
+        for k, v in kwargs.items():
+            if k in attList:
+                setattr(user, k, v)
+            else:
+                raise ValueError
+
+            self._session.add(user)
+            self._session.commit
+            self._session.query(User)
