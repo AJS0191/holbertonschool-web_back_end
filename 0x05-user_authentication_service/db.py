@@ -72,7 +72,7 @@ class DB:
 
         return session.query(User).filter_by(**kwargs).one()
 
-    def update_user(self, user_id, **kwargs) -> None:
+    def update_user(self, user_id: int, **kwargs) -> None:
         """updates a user with keyword args"""
         user = self.find_user_by(id=user_id)
 
