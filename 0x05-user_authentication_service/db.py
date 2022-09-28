@@ -7,7 +7,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.session import Session
 from sqlalchemy.exc import InvalidRequestError
 from sqlalchemy.orm.exc import NoResultFound
-from sqlalchemy.orm import scoped_session
 import uuid
 
 from user import Base, User
@@ -47,11 +46,7 @@ class DB:
         email_ = email
         hashed_ = hashed_password
 
-        Base.metadata.create_all(self._engine)
-        session_factory = sessionmaker(bind=self._engine,
-                                       expire_on_commit=False)
-        Session = scoped_session(session_factory)
-        self.__session = Session
+        Session = self._session
 
         user = User(
             email=email_,
