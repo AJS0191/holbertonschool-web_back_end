@@ -17,3 +17,4 @@
 *.pyc
 0x03-Basic_authentication/api/v1/views/test.py
 0x05-user_authentication_service/test.py
+0x05-user_authentication_service/a.db
