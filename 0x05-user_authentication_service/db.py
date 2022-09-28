@@ -5,6 +5,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.session import Session
+from sqlalchemy.exc import InvalidRequestError
+from sqlalchemy.orm.exc import NoResultFound
+from sqlalchemy.orm import scoped_session
 import uuid
 
 from user import Base, User
@@ -35,14 +38,34 @@ class DB:
         """creates and saves a user to DB"""
         email_ = email
         hashed_ = hashed_password
-        session = self._session
+        
+        Base.metadata.create_all(self._engine)
+        session_factory = sessionmaker(bind=self._engine,
+                                       expire_on_commit=False)
+        Session = scoped_session(session_factory)
+        self.__session = Session
+
         user = User(
-            id=str(uuid.uuid4()),
             email=email_,
             hashed_password=hashed_,
-            session_id=self.__session,
-            reset_token='RESET'
         )
-        session.add(user)
-        session.commit
+        Session.add(user)
+        Session.commit
+        Session.query(User).one()
         return user
+
+    def find_user_by(self, **kwargs: dict) -> User:
+        """find a user by given attribute"""
+        attList = [
+            'id',
+            'email',
+            'hashed_password',
+            'session_id',
+            'reset_token'
+        ]
+        session = self.__session
+        for x in kwargs.keys():
+            if x not in attList:
+                raise InvalidRequestError
+        
+        return session.query(User).filter_by(**kwargs).one()
