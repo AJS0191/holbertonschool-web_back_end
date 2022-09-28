@@ -54,7 +54,7 @@ class DB:
         Session.query(User).one()
         return user
 
-    def find_user_by(self, **kwargs: dict) -> User:
+    def find_user_by(self, **kwargs: dict):
         """find a user by given attribute"""
         attList = [
             'id',
