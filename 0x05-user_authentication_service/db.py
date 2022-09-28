@@ -60,7 +60,7 @@ class DB:
     def find_user_by(self, **kwargs) -> User:
         """find a user by given attribute"""
 
-        session = self.__session
+        session = self._session
         for x in kwargs.keys():
             if x not in attList:
                 raise InvalidRequestError

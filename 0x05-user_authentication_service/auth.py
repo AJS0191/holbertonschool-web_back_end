@@ -23,11 +23,6 @@ class Auth:
 
     def register_user(self, email: str, password: str) -> User:
         """hashes a users password and saves it in database"""
-        if self._db._session is None:
-            Base.metadata.create_all(self._db._engine)
-            sessionF = sessionmaker(bind=self._db._engine,
-                                    expire_on_commit=False)
-            Session = scoped_session(sessionF)
         user = self._db.find_user_by(email=email)
         if user:
             raise ValueError(f'{user.email} already exists')
