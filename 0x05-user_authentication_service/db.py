@@ -38,7 +38,7 @@ class DB:
         """creates and saves a user to DB"""
         email_ = email
         hashed_ = hashed_password
-        
+
         Base.metadata.create_all(self._engine)
         session_factory = sessionmaker(bind=self._engine,
                                        expire_on_commit=False)
@@ -54,7 +54,7 @@ class DB:
         Session.query(User).one()
         return user
 
-    def find_user_by(self, **kwargs: dict) -> User:
+    def find_user_by(self, **kwargs) -> User:
         """find a user by given attribute"""
         attList = [
             'id',
@@ -67,5 +67,5 @@ class DB:
         for x in kwargs.keys():
             if x not in attList:
                 raise InvalidRequestError
-        
+
         return session.query(User).filter_by(**kwargs).one()
