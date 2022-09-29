@@ -34,7 +34,7 @@ class Auth:
             raise ValueError(f'{user.email} already exists')
         else:
             password = _hash_password(password)
-            self._db.add_user(email, password)
+            user = self._db.add_user(email, password)
             return user
 
     def valid_login(self, email: str, password: str) -> bool:
