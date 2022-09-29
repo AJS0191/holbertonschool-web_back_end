@@ -50,5 +50,6 @@ class Auth:
         user = self._db.find_user_by(email=email)
         if user:
             i = _generate_uuid()
+            self._db.update_user(user.id, session_id=i)
             user.session_id = i
             return i
