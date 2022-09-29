@@ -51,5 +51,5 @@ class Auth:
         if user:
             i = _generate_uuid()
             self._db.update_user(user.id, session_id=i)
-            user.session_id = i
+            print(user.session_id)
             return i
