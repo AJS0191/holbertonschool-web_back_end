@@ -48,7 +48,8 @@ def logout():
     user = AUTH.get_user_from_session_id(session_id)
     if user:
         AUTH._db.update_user(user.id, session_id=None)
-        redirect('/', 302)
+        resp = redirect('/', 302)
+        return resp
     else:
         abort(403)
 
