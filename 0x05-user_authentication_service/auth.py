@@ -4,7 +4,7 @@ from base64 import encode
 import bcrypt
 from db import DB
 from user import User, Base
-from sqlalchemy.orm import sessionmaker, scoped_session
+from sqlalchemy.orm import sessionmaker
 import uuid
 
 
