@@ -18,3 +18,7 @@
 0x03-Basic_authentication/api/v1/views/test.py
 0x05-user_authentication_service/test.py
 0x05-user_authentication_service/a.db
+0x00-Unittests_and_integration_tests/client.py
+0x00-Unittests_and_integration_tests/fixtures.py
+0x00-Unittests_and_integration_tests/test.py
+0x00-Unittests_and_integration_tests/utils.py
