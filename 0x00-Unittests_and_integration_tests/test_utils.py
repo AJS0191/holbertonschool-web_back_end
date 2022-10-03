@@ -10,9 +10,9 @@ class TestAccessNestedMap(TestCase):
     """class that tests access nested map"""
 
     @parameterized.expand([
-        ('value in a tA', {"a": 1}, ("a",), 1)
-        ('value in b tA', {"a": {"b": 2}}, ("a",), {"b": 2})
-        ('value in b tB', {"a": {"b": 2}}, ("a", "b"), 2)
+        ({"a": 1}, ("a",), 1)
+        ({"a": {"b": 2}}, ("a",), {"b": 2})
+        ({"a": {"b": 2}}, ("a", "b"), 2)
     ])
     def test_access_nested_map(self, _, nested_map, path, expected):
         """tests access nested map"""
