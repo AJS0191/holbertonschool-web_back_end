@@ -8,9 +8,6 @@ import pytest
 
 class TestAccessNestedMap(TestCase):
     """class that tests access nested map"""
-    def __init__(self) -> None:
-        super().__init__()
-
     @parameterized.expand
     def test_access_nested_map(self, nested_map, path, expected):
         """tests access nested map"""
