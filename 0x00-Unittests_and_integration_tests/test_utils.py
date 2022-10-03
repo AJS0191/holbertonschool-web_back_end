@@ -8,7 +8,12 @@ import pytest
 
 class TestAccessNestedMap(TestCase):
     """class that tests access nested map"""
-    @parameterized.expand
-    def test_access_nested_map(self, nested_map, path, expected):
+    @parameterized.expand([
+        ('value in a tA', {"a": 1}, ("a",))
+        ('value in b tA', {"a": {"b": 2}}, ("a",))
+        ('value in b tB', {"a": {"b": 2}}, ("a", "b"))
+
+    ])
+    def test_access_nested_map(self, _, nested_map, path, expected):
         """tests access nested map"""
-        self.assertEq(access_nested_map(nested_map, path), expected)
+        self.assertEqual(access_nested_map(nested_map, path), expected)
