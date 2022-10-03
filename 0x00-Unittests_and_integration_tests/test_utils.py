@@ -8,6 +8,7 @@ import pytest
 
 class TestAccessNestedMap(TestCase):
     """class that tests access nested map"""
+
     @parameterized.expand([
         ('value in a tA', {"a": 1}, ("a",))
         ('value in b tA', {"a": {"b": 2}}, ("a",))
