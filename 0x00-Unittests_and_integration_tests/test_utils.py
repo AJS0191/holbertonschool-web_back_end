@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """the module contains unit testing"""
-from unittest import TestCase, assertEq
+import unittest
 from parameterized import parameterized
 from utils import access_nested_map
 import pytest
 
 
-class TestAccessNestedMap(TestCase):
+class TestAccessNestedMap(unittest.TestCase):
     """class that tests access nested map"""
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
