@@ -21,7 +21,7 @@ babel = Babel(app)
 def get_locale():
     """uses best match from request with config.languages to get best locale"""
     if request.args.get('locale'):
-        return request.accept_languages._best_single_match(request.args.get('locale'))
+        return request.args.get('locale')
     return request.accept_languages.best_match(Config.LANGUAGES)
 
 
