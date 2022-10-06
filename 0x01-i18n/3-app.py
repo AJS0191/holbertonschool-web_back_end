@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """this is the basic flask app starting with single route"""
 from flask import Flask, render_template, request
-from flask_babel import Babel, gettext
+from flask_babel import Babel, _
 
 app = Flask(__name__)
 
@@ -26,7 +26,7 @@ def get_locale():
 @app.route('/', strict_slashes=False)
 def index():
     """renders the 1-index template"""
-    home_title = gettext(u'Welcome to Holberton')
-    home_header = gettext(u'Hello World')
+    home_title = _('Welcome to Holberton')
+    home_header = _('Hello World')
     return render_template('3-index.html', home_title=home_title,
                            home_header=home_header)
