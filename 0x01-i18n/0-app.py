@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""this is the basic flask app starting with single route"""
 from flask import Flask, render_template
 
 
