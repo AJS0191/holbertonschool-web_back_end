@@ -9,4 +9,4 @@ app = Flask(__name__)
 @app.route('/', strict_slashes=False)
 def index():
     """renders the 0-index template"""
-    return render_template('/templates/0-index.html')
+    return render_template('0-index.html')
