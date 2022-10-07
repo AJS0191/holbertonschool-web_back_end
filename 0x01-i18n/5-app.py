@@ -62,8 +62,10 @@ def before_request():
     if userId:
         user = get_user(users, userId)
         if user:
+            ('user')
             g.user = user
         else:
+            print('no user')
             g.user = None
             print(f'{g.user} this should be none')
 
