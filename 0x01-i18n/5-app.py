@@ -65,6 +65,8 @@ def before_request():
         if user:
             ('user')
             g.user = user
+        else:
+            g.user = None
     else:
         print('no user')
         g.user = None
