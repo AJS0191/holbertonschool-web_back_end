@@ -32,10 +32,8 @@ def index():
     home_header = _('Hello World')
     not_logged_in = _("You are not logged in")
     if g.user is not None:
-        print(g.user.get('name'))
         logged_in_as = _('You are logged in as %(username)s',
                          username=g.user.get('name'))
-        print(logged_in_as)
         return render_template('5-index.html', home_title=home_title,
                                home_header=home_header,
                                logged_in_as=logged_in_as)
@@ -59,9 +57,7 @@ def get_user(users: dict, num: int) -> dict:
 
 @app.before_request
 def before_request():
-    print('happening first')
     userId = request.args.get('login_as')
-    print(f'{userId}')
     if userId:
         user = get_user(users, userId)
         if user:
@@ -70,9 +66,7 @@ def before_request():
         else:
             g.user = None
     else:
-        print('no user')
         g.user = None
-        print(f'{g.user} this should be none')
 
 
 if __name__ == "__main__":
