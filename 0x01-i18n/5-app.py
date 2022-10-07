@@ -64,6 +64,7 @@ def before_request():
             g.user = user
         else:
             g.user = None
+            print(f'{g.user} this should be none')
 
 
 if __name__ == "__main__":
