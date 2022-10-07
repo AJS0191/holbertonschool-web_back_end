@@ -57,6 +57,7 @@ def get_user(users: dict, num: int) -> dict:
 
 @app.before_request
 def before_request():
+    print('happening first')
     userId = request.args.get('login_as')
     if userId:
         user = get_user(users, userId)
