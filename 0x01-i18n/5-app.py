@@ -31,12 +31,15 @@ def index():
     home_title = _('Welcome to Holberton')
     home_header = _('Hello World')
     not_logged_in = _("You are not logged in")
-    if g.user:
-        logged_in_as = _('You are logged in as %(username)s', username=g.user.name)
+    if g.user is not None:
+        logged_in_as = _('You are logged in as %(username)s',
+                         username=g.user.name)
         return render_template('5-index.html', home_title=home_title,
-                               home_header=home_header, logged_in_as=logged_in_as)
+                               home_header=home_header,
+                               logged_in_as=logged_in_as)
     return render_template('5-index.html', home_title=home_title,
-                           home_header=home_header, not_logged_in=not_logged_in)
+                           home_header=home_header,
+                           not_logged_in=not_logged_in)
 
 
 users = {
@@ -59,10 +62,11 @@ def before_request():
         user = get_user(users, userId)
         if user:
             g.user = user
+        else:
+            g.user = None
 
 
 if __name__ == "__main__":
     host = getenv("API_HOST", "0.0.0.0")
     port = getenv("API_PORT", "5000")
     app.run(host=host, port=port)
-
