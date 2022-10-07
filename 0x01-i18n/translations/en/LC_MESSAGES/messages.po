@@ -28,11 +28,11 @@ msgstr "Hello world!"
 
 #: 5-app.py:33
 msgid "not_logged_in"
-msgstr "You are not logged in"
+msgstr "You are not logged in."
 
 #: 5-app.py:35
 #, python-format
 msgid "logged_in_as"
-msgstr "You are logged in as %(username)s"
+msgstr "You are logged in as %(username)s."
 
 

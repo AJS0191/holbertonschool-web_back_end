@@ -33,4 +33,4 @@ msgstr "Vous n'êtes pas connecté."
 #: 5-app.py:35
 #, python-format
 msgid "logged_in_as"
-msgstr "Vous êtes connecté en tant que %(username)s"
+msgstr "Vous êtes connecté en tant que %(username)s."
