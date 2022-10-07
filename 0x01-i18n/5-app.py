@@ -52,6 +52,7 @@ users = {
 
 def get_user(users: dict, num: int) -> dict:
     """grabs user from dictionary"""
+    print(users.get(num))
     return users.get(num)
 
 
