@@ -30,9 +30,9 @@ def index():
     """renders the 1-index template"""
     home_title = _('Welcome to Holberton')
     home_header = _('Hello World')
-    not_logged_in = _("You are not logged in")
+    not_logged_in = _("You are not logged in.")
     if g.user is not None:
-        logged_in_as = _('You are logged in as %(username)s',
+        logged_in_as = _('You are logged in as %(username)s.',
                          username=g.user.get('name'))
         return render_template('5-index.html', home_title=home_title,
                                home_header=home_header,
