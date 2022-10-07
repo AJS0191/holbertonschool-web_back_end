@@ -35,6 +35,7 @@ def index():
         print(g.user.get('name'))
         logged_in_as = _('You are logged in as %(username)s',
                          username=g.user.get('name'))
+        print(logged_in_as)
         return render_template('5-index.html', home_title=home_title,
                                home_header=home_header,
                                logged_in_as=logged_in_as)
