@@ -65,10 +65,10 @@ def before_request():
         if user:
             ('user')
             g.user = user
-        else:
-            print('no user')
-            g.user = None
-            print(f'{g.user} this should be none')
+    else:
+        print('no user')
+        g.user = None
+        print(f'{g.user} this should be none')
 
 
 if __name__ == "__main__":
