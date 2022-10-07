@@ -34,7 +34,7 @@ def index():
     if g.user:
         logged_in_as = _('You are logged in as %(username)s', username=g.user.name)
         return render_template('5-index.html', home_title=home_title,
-                           home_header=home_header, logged_in_as=logged_in_as)
+                               home_header=home_header, logged_in_as=logged_in_as)
     return render_template('5-index.html', home_title=home_title,
                            home_header=home_header, not_logged_in=not_logged_in)
 
