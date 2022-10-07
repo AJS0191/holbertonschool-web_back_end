@@ -59,6 +59,7 @@ def get_user(users: dict, num: int) -> dict:
 def before_request():
     print('happening first')
     userId = request.args.get('login_as')
+    print(f'{userId}')
     if userId:
         user = get_user(users, userId)
         if user:
