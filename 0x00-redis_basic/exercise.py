@@ -3,6 +3,7 @@
 
 import uuid
 import redis
+import typing
 
 
 class Cache():
@@ -11,7 +12,7 @@ class Cache():
         self._redis = redis.Redis()
         self._redis.flushdb()
 
-    def store(self, data: str, bytes, int, float) -> str:
+    def store(self, data: typing.Union[str, bytes, int, float]) -> str:
         """stores a uuid with data in redis cache"""
         key = str(uuid.uuid3())
         self._redis.set(key, data)
