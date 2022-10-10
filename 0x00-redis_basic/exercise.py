@@ -15,5 +15,5 @@ class Cache():
     def store(self, data: typing.Union[str, bytes, int, float]) -> str:
         """stores a uuid with data in redis cache"""
         key = str(uuid.uuid4())
-        self._redis.set(key, b(data))
+        self._redis.set(key, data)
         return key
