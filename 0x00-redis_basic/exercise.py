@@ -19,12 +19,26 @@ def count_calls(method: typing.Callable) -> typing.Callable:
     return wrapper
 
 
+def call_history(method: typing.Callable) -> typing.Callable:
+    """saves a call history """
+    @wraps(method)
+    def wrapper(*args):
+        inkey = method.__qualname__ + ':inputs'
+        outkey = method.__qualname__ + ':outputs'
+        self = args[0]
+        self._redis.rpush(inkey, str(args))
+        out = method(*args)
+        self._redis.rpush(outkey, out)
+        return out
+
+
 class Cache():
     """cache class connected to a redis server"""
     def __init__(self) -> None:
         self._redis = redis.Redis()
         self._redis.flushdb()
 
+    @call_history
     @count_calls
     def store(self, data: typing.Union[str, bytes, int, float]) -> str:
         """stores a uuid with data in redis cache"""
