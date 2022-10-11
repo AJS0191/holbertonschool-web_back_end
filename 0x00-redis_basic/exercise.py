@@ -25,7 +25,7 @@ class Cache():
             return None
         if fn:
             return fn(val)
-        return None
+        return val
 
     def get_str(val: bytes) -> str:
         """changes val to str, its original data type"""
