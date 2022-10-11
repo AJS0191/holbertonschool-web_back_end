@@ -10,7 +10,7 @@ from functools import wraps
 def count_calls(method: typing.Callable) -> typing.Callable:
     """wraps methods and counts how many times they been used"""
     @wraps(method)
-    def wrapper(*args, **kwargs):
+    def wrapper(self, *args, **kwargs):
         if self._redis.get(method.__qualname__):
             self._redis.incr(method.__qualname__)
         else:
