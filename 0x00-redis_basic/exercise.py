@@ -4,6 +4,19 @@
 import uuid
 import redis
 import typing
+from functools import wraps
+
+
+def count_calls(method: typing.Callable) -> typing.Callable:
+    """wraps methods and counts how many times they been used"""
+    @wraps(method)
+    def wrapper(*args, **kwargs):
+        if args[0]._redis.get(method.__qualname__):
+            args[0]._redis.incr(method.__qualname__)
+        else:
+            args[0]._redis.set(method.__qualname__)
+        return method(*args, **kwargs)
+    return wrapper
 
 
 class Cache():
@@ -12,6 +25,7 @@ class Cache():
         self._redis = redis.Redis()
         self._redis.flushdb()
 
+    @count_calls
     def store(self, data: typing.Union[str, bytes, int, float]) -> str:
         """stores a uuid with data in redis cache"""
         key = str(uuid.uuid4())
