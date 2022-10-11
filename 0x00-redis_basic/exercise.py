@@ -14,7 +14,7 @@ def count_calls(method: typing.Callable) -> typing.Callable:
         if args[0]._redis.get(method.__qualname__):
             args[0]._redis.incr(method.__qualname__)
         else:
-            args[0]._redis.set(method.__qualname__)
+            args[0]._redis.set(method.__qualname__, 0)
         return method(*args, **kwargs)
     return wrapper
 
