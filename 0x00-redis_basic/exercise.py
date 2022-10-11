@@ -7,6 +7,12 @@ import typing
 from functools import wraps
 
 
+def replay(method: typing.Callable):
+    """takes a method and returns info from the methods calling class"""
+    zip(method.self._redis.get('store:input'),
+        method.self._redis.lrange('store:input'))
+
+
 def count_calls(method: typing.Callable) -> typing.Callable:
     """wraps methods and counts how many times they been used"""
     @wraps(method)
@@ -31,6 +37,7 @@ def call_history(method: typing.Callable) -> typing.Callable:
         self._redis.rpush(outkey, out)
         return out
     return wrapper
+
 
 class Cache():
     """cache class connected to a redis server"""
