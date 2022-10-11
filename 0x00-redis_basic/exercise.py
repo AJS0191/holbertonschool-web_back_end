@@ -27,7 +27,7 @@ def call_history(method: typing.Callable) -> typing.Callable:
         outkey = method.__qualname__ + ':outputs'
         self = args[0]
         self._redis.rpush(inkey, str(args))
-        out = method(args)
+        out = method(*args)
         self._redis.rpush(outkey, out)
         return out
     return wrapper
