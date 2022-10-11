@@ -30,7 +30,7 @@ def call_history(method: typing.Callable) -> typing.Callable:
         out = method(args)
         self._redis.rpush(outkey, out)
         return out
-
+    return wrapper
 
 class Cache():
     """cache class connected to a redis server"""
