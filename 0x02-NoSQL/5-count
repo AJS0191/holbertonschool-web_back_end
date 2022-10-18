@@ -1,1 +1,2 @@
+// counts items in collection
 db.school.find().count();

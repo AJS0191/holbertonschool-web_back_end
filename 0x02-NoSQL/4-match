@@ -1,1 +1,2 @@
+// finds a piece of data
 db.school.find('name:"Holberton School"');
