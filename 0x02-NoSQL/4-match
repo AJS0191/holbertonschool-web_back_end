@@ -1,2 +1,2 @@
 // finds a piece of data
-db.school.find( {"name": "Holberton School"}, {"name" : 1} )
+db.school.find()
