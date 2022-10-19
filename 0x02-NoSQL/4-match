@@ -1,2 +1,2 @@
 // finds a piece of data
-db.school.find({name:{$eq:"Holberton School"}});
+db.school.find({"name":{$eq:"Holberton School"}});
