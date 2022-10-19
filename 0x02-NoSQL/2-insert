@@ -1,2 +1,2 @@
 // insert into a db 
-db.user.insert({name: "Holberton school"});
+db.user.insert({"name": "Holberton school"});
