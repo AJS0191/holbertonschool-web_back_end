@@ -11,4 +11,7 @@ db = client.my_db
 def list_all(mongo_collection):
     """lists all documents in a collection"""
     collection = db[f'{mongo_collection}']
-    return list(collection.find())
+    docs = []
+    for doc in collection.find():
+        docs.append(doc)
+    return docs
