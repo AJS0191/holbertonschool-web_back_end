@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""module contains a pymongo method list_all"""
 
 from pymongo import MongoClient
 
