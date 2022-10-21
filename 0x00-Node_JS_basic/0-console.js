@@ -1,4 +1,4 @@
 //writes a string to the STDOUT
-export function displayMessage(string){
+function displayMessage(string){
   console.log(string)
 }
