@@ -1,5 +1,5 @@
 //takes info from user and displays
-module.exports = function nameIs(){
+function nameIs(){
   console.log("Welcome to Holberton School, what is your name?");
   let readline = require('readline');
   let name;
