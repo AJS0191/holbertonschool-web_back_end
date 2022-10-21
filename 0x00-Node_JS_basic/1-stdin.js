@@ -1,6 +1,5 @@
 //takes info from user and displays
 function nameIs(){
-  console.log("Welcome to Holberton School, what is your name?");
   let readline = require('readline');
   let name;
   let rl = readline.createInterface(
@@ -8,9 +7,8 @@ function nameIs(){
   );
 
   rl.question("Welcome to Holberton School, what is your name?\n", (name) => {
-    console.log(`Your name is: ${name}`)
+    console.log(`Your name is: ${name}`);
+    console.log("This important software is now closing")
   })
-
-  console.log("This important software is now closing")
 }
 nameIs();
