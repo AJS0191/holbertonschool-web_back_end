@@ -13,3 +13,4 @@ function nameIs(){
   return;
 }
 nameIs();
+return;
