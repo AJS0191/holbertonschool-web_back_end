@@ -10,6 +10,6 @@ function nameIs(){
     console.log(`Your name is: ${name}`);
     console.log("This important software is now closing")
   })
+  return;
 }
 nameIs();
-return;
