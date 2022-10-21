@@ -1,4 +1,4 @@
 //writes a string to the STDOUT
-function displayMessage(string){
+module.exports = function displayMessage(string){
   console.log(string)
 }
