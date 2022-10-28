@@ -17,21 +17,21 @@ describe("simple add rounded test", function() {
 
   it("checks negs", function() {
     assert.equal(calculateNumber('SUM',1,-0.2), 1)
-    assert.equal(calculateNumber('SUM',1,-0.5), 0)
+    assert.equal(calculateNumber('SUM',1,-0.5), 1)
   })
 })
 describe("simple 'SUBTRACT' rounded test", function() {
   it("checks equality", function() {
-    assert.equal(calculateNumber('SUBTRACT',1,2), 1)
-    assert.equal(calculateNumber('SUBTRACT',1,2.5), 2)
-    assert.equal(calculateNumber('SUBTRACT',1,2.2), 1)
-    assert.equal(calculateNumber('SUBTRACT',1,0.2), -1)
+    assert.equal(calculateNumber('SUBTRACT',1,2), -1)
+    assert.equal(calculateNumber('SUBTRACT',1,2.5), -2)
+    assert.equal(calculateNumber('SUBTRACT',1,2.2), -1)
+    assert.equal(calculateNumber('SUBTRACT',1,0.2), 1)
     assert.equal(calculateNumber('SUBTRACT',1,0.5), 0)
   })
 
   it("checks 0s", function() {
     assert.equal(calculateNumber('SUBTRACT',0,0.2), 0)
-    assert.equal(calculateNumber('SUBTRACT',0,0.5), 1)
+    assert.equal(calculateNumber('SUBTRACT',0,0.5), -1)
   })
 
   it("checks negs", function() {
