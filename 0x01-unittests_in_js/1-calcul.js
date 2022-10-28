@@ -1,16 +1,16 @@
 function calculateNumber(a, b, type) {
   if (type == 'SUM') {
-    return Number(a.toFixed(0)) + Number(b.toFixed(0))
+    return Math.round(a) + Math.round(b)
   }
   if (type == 'SUBTRACT') {
-    return Number(b.toFixed(0)) - Number(a.toFixed(0))
+    return Math.round(b) - Math.round(a)
   }
   if (type == 'DIVIDE') {
-    if (Number(b.toFixed(0)) == 0) {
+    if (Math.round(b) == 0) {
       return 'Error'
     } else {
-      c = Number(a.toFixed(0)) / Number(b.toFixed(0))
-      return Number(c.toFixed(2))
+      c = Math.round(a) / Math.round(b)
+      return Math.round(c)
     }
   }
 }
