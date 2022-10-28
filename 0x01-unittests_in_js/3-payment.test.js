@@ -1,13 +1,13 @@
-const chai = require("chai");
-const expect = chai.expect;
+
+const { expect } = require("chai");
 const sinon = require('sinon')
 const Utils = require("./utils");
-const totalC = require('./3-payment');
+const sendPaymentRequestToApi = require('./3-payment');
 
 describe("compare two add functions", function() {
   it("checks equality", function() {
     const spiedFunc = sinon.spy(Utils, 'calculateNumber');
-    totalC(100, 20);
+    sendPaymentRequestToApi(100, 20);
     expect(spiedFunc.calledWith('SUM', 100, 20)).to.be.true;
     spiedFunc.restore();
   })});
