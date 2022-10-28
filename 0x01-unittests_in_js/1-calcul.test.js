@@ -36,13 +36,13 @@ describe("simple 'SUBTRACT' rounded test", function() {
 
   it("checks negs", function() {
     assert.equal(calculateNumber('SUBTRACT',1,-0.2), 1)
-    assert.equal(calculateNumber('SUBTRACT',1,-0.5), -2)
+    assert.equal(calculateNumber('SUBTRACT',1,-0.5), 1)
   })
 })
 describe("simple 'DIVIDE' rounded test", function() {
   it("checks equality", function() {
     assert.equal(calculateNumber('DIVIDE',1,2), 0.5)
-    assert.equal(calculateNumber('DIVIDE',1,2.5), 0.33)
+    assert.equal(calculateNumber('DIVIDE',1,4), 0.25)
     assert.equal(calculateNumber('DIVIDE',1,2.2), 0.5)
     assert.equal(calculateNumber('DIVIDE',1,0.2), 'Error')
     assert.equal(calculateNumber('DIVIDE',1,0.5), 1)
@@ -54,7 +54,7 @@ describe("simple 'DIVIDE' rounded test", function() {
   })
 
   it("checks negs", function() {
-    assert.equal(calculateNumber('DIVIDE',1,-0.2), 'Error')
+    assert.equal(calculateNumber('DIVIDE',-1,0), 'Error')
     assert.equal(calculateNumber('DIVIDE',1,-0.5), -1)
   })
 })
