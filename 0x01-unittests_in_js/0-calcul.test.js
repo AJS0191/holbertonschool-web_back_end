@@ -9,4 +9,14 @@ describe("simple add rounded test", function() {
     assert.equal(calculateNumber(1,0.2), 1)
     assert.equal(calculateNumber(1,0.5), 2)
   })
+
+  it("checks 0s", function() {
+    assert.equal(calculateNumber(0,0.2), 0)
+    assert.equal(calculateNumber(0,0.5), 1)
+  })
+
+  it("checks negs", function() {
+    assert.equal(calculateNumber(1,-0.2), 1)
+    assert.equal(calculateNumber(1,-0.5), 0)
+  })
 })
