@@ -49,8 +49,8 @@ describe("simple 'DIVIDE' rounded test", function() {
   })
 
   it("checks 0s", function() {
-    assert.equal(calculateNumber(0,0.2, 'DIVIDE'), 0)
-    assert.equal(calculateNumber(0,0.5, 'DIVIDE'), 1)
+    assert.equal(calculateNumber(0,0.2, 'DIVIDE'), 'Error')
+    assert.equal(calculateNumber(0,0.5, 'DIVIDE'), 0)
   })
 
   it("checks negs", function() {
