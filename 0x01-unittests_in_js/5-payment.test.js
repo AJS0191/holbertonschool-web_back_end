@@ -6,7 +6,6 @@ const sendPaymentRequestToApi = require('./5-payment');
 
 describe("compare two add functions", function() {
   it("checks equality", function() {
-    const stubbedFunc = sinon.spy(Utils, 'calculateNumber').returns(10);
     let spy = sinon.spy(sendPaymentRequestToApi)
     beforeEach( () => {
       sendPaymentRequestToApi(100, 20);
