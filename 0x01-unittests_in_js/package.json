@@ -4,7 +4,7 @@
   "description": "Node.js testing",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --exit",
+    "test": "./node_modules/mocha/bin/mocha.js --exit",
     "start": "npm test"
   },
   "author": "A-SH",
