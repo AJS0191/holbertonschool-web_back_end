@@ -13,6 +13,6 @@ describe("compare two add functions", function() {
     afterEach( () => {
       spy = spy;
     })
-    expect(sendPaymentRequestToApi(100, 20)).to.equal(120);
-    expect(sendPaymentRequestToApi(10, 2)).to.equal(12);
+    expect(sendPaymentRequestToApi(100, 20)).to.equal(undefined);
+    expect(sendPaymentRequestToApi(10, 2)).to.equal(undefined);
   })});
