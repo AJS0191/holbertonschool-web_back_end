@@ -9,8 +9,8 @@ function calculateNumber(a, b, type) {
     if (Number(b.toFixed(0)) == 0) {
       return 'Error'
     } else {
-
-      return Number(a.toFixed(0)) / Number(b.toFixed(0))
+      c = Number(a.toFixed(0)) / Number(b.toFixed(0))
+      return Number(c.toFixed(2))
     }
   }
 }
