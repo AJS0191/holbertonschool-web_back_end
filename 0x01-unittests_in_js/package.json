@@ -4,7 +4,7 @@
   "description": "Node.js testing",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha.js --exit"
+    "test": "mocha"
   },
   "author": "A-SH",
   "license": "ISC",
