@@ -1,6 +1,5 @@
-class Utils {
-  constructor(){
-  this.calculateNumber = function(type, a, b) {
+const Utils = {
+  calculateNumber(type, a, b) {
     switch (type){
       case 'SUM':  
         return Math.round(a) + Math.round(b)
@@ -15,6 +14,6 @@ class Utils {
           return c
       }
     }
-  }
-}};
+  },
+};
 module.exports = Utils
