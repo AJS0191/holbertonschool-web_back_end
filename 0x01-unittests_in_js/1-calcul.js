@@ -6,9 +6,10 @@ function calculateNumber(a, b, type) {
     return Number(b.toFixed(0)) - Number(a.toFixed(0))
   }
   if (type == 'DIVIDE') {
-    if (b == 0) {
+    if (Number(b.toFixed(0)) == 0) {
       return 'Error'
     } else {
+
       return Number(a.toFixed(0)) / Number(b.toFixed(0))
     }
   }
