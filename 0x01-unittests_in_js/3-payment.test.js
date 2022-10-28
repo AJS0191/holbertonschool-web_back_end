@@ -1,6 +1,6 @@
 const chai = require("chai");
 const expect = chai.expect;
-const sinon = reqire('sinon')
+const sinon = require('sinon')
 const Utils = require("./utils");
 const totalC = require('./3-payment');
 
