@@ -8,6 +8,6 @@ describe("compare two add functions", function() {
   it("checks equality", function() {
     const spiedFunc = sinon.spy(Utils, 'calculateNumber');
     sendPaymentRequestToApi(100, 20);
-    expect(spiedFunc.calledWith('SUM', 100, 20)).to.be.true;
+    expect(spiedFunc.calledWith('SUM', 100, 20)).to.equal(120);
     spiedFunc.restore();
   })});
