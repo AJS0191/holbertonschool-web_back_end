@@ -13,6 +13,6 @@ describe("compare two add functions", function() {
     afterEach( () => {
       spy.restore();
     })
-    expect(sendPaymentRequestToApi.calledWith(100, 20)).to.be.true;
-    expect(sendPaymentRequestToApi.calledWith(10, 2)).to.equal(20);
+    expect(sendPaymentRequestToApi(100, 20)).to.equal(120);
+    expect(sendPaymentRequestToApi(10, 2)).to.equal(12);
   })});
