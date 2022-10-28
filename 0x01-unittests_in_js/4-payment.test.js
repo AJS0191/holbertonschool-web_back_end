@@ -10,5 +10,4 @@ describe("compare two add functions", function() {
     const spiedStub = sinon.spy(stubbedFunc);
     stubbedFunc(100, 20);
     expect(spiedStub.calledWith(100, 20)).to.be.false;
-    spiedStub.restore();
   })});
