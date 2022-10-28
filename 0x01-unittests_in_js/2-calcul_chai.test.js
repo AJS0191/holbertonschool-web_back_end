@@ -1,6 +1,6 @@
 const chai = require("chai");
 const expect = chai.expect;
-const calculateNumber = require("./2-calcul")
+const calculateNumber = require("./2-calcul_chai")
 
 describe("simple add rounded test", function() {
   it("checks equality", function() {
