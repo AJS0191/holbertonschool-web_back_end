@@ -9,6 +9,6 @@ describe("compare two add functions", function() {
     const stubbedFunc = sinon.stub(Utils, 'calculateNumber').returns(10);
     const spiedStub = sinon.spy(stubbedFunc);
     stubbedFunc(100, 20);
-    expect(spiedStub.to.equal(10));
+    expect(spiedStub.calledWith(100, 20)).to.be.true;
     spiedFunc.restore();
   })});
