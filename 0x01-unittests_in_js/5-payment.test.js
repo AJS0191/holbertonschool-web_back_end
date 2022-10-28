@@ -11,7 +11,7 @@ describe("compare two add functions", function() {
       sendPaymentRequestToApi(100, 20);
     })
     afterEach( () => {
-      spy.restore();
+      pass
     })
     expect(sendPaymentRequestToApi(100, 20)).to.equal(120);
     expect(sendPaymentRequestToApi(10, 2)).to.equal(12);
