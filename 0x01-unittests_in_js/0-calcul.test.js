@@ -17,6 +17,6 @@ describe("simple add rounded test", function() {
 
   it("checks negs", function() {
     assert.equal(calculateNumber(1,-0.2), 1)
-    assert.equal(calculateNumber(1,-0.5), -1)
+    assert.equal(calculateNumber(1,-0.5), 1)
   })
 })
