@@ -23,6 +23,8 @@ app.get('/available_payments', function(req, res){
   }
   res.json(payments)
 })
+
+.use(express.json())
 .post('/login', function(req, res){
   res.send(`Welcome ${req.body.userName}`)
 })
