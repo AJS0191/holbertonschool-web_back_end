@@ -35,4 +35,13 @@ describe('api tests', function() {
       done();
     })
   }))
+
+  it('testing post method', () => new Promise((done) => {
+    request('http://localhost:7865/login', {json: {username: 'Ashton'}}, (error, response, body) => {
+      expect(response.statusCode).to.equal(200)
+      expect(response.request.method).to.equal('POST')
+      expect(body).to.equal('Welcome Ashton')
+      done();
+    })
+  }))
   })
