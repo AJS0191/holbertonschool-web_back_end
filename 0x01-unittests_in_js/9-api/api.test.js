@@ -7,6 +7,7 @@ describe('api tests', function() {
     request('http://localhost:7865/', (error, response, body) => {
       expect(response.statusCode).to.equal(200)
       expect(response.request.method).to.equal('GET')
+      expect(body).to.equal('Welcome to the payment system')
       done();
     })
   }))
@@ -14,6 +15,7 @@ describe('api tests', function() {
   it('testing get method with correct cart id', () => new Promise((done) => {
     request('http://localhost:7865/cart/2', (error, response, body) => {
       expect(response.statusCode).to.equal(200)
+      expect(body).to.equal('Payment methods for cart 2')
         done();
     })
   }))

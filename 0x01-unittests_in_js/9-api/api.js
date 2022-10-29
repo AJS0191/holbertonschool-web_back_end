@@ -11,5 +11,5 @@ app.get('/', function(req, res){
 })
 
 app.get('/cart/:id([0-9])+', function(req, res){
-  res.send('Welcome to the payment system')
+  res.send(`Payment methods for cart ${req.params.id}`)
 })
