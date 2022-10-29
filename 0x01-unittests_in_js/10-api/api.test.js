@@ -31,7 +31,7 @@ describe('api tests', function() {
     request('http://localhost:7865/available_payments', (error, response, body) => {
       expect(response.statusCode).to.equal(200)
       expect(response.request.method).to.equal('GET')
-      expect(body).to.equal({"payment_methods":{"credit_cards":true,"paypal":false}})
+      expect(body).to.equal({ payment_methods: { …(2) } })
       done();
     })
   }))
