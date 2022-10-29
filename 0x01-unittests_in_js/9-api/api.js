@@ -10,6 +10,6 @@ app.get('/', function(req, res){
   res.send('Welcome to the payment system')
 })
 
-app.get('/cart/2', function(req, res){
+app.get('/cart/:id([0-9])+', function(req, res){
   res.send('Welcome to the payment system')
 })
