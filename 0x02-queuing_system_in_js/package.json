@@ -1,0 +1,19 @@
+{
+  "name": "0x02-queuing_system_in_js",
+  "version": "1.0.0",
+  "description": "This directory holds files for tasks dealing with queing systems in js. Redis.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "redis": "git+https://github.com/redis/node-redis.git"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4"
+  }
+}
