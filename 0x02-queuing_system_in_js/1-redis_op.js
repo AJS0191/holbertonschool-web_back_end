@@ -11,7 +11,9 @@ function setNewSchool(schoolName, value) {
 };
 
 function displaySchoolValue(schoolName) {
-  client.get(schoolName, print);
+  client.get(schoolName, (err, reply) => {
+    console.log(reply);
+  });
 };
 
 displaySchoolValue('Holberton');
