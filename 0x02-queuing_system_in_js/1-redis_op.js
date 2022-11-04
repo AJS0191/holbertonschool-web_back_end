@@ -7,12 +7,12 @@ client.on('error', (err) => { console.log("Redis client not connected to server:
 client.on('connect', () => { console.log("Redis client connected to the server")});
 
 function setNewSchool(schoolName, value) {
-  client.set(schoolName, value, print)
+  client.set(schoolName, value, print);
 };
 
 function displaySchoolValue(schoolName) {
-  client.get(schoolName)
-}
+  console.log(client.get(schoolName));
+};
 
 displaySchoolValue('Holberton');
 setNewSchool('HolbertonSanFransisco', '100');
