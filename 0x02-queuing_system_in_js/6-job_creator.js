@@ -1,5 +1,5 @@
 var kue = require('kue');
-queue = kue.createQueue()
+var queue = kue.createQueue()
 
 jobData = {
   phoneNumber: string,
