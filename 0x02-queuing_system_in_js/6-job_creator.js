@@ -2,8 +2,8 @@ var kue = require('kue');
 var queue = kue.createQueue()
 
 jobData = {
-  phoneNumber: string,
-  message: string,
+  phoneNumber: 'string',
+  message: 'string',
 }
 
 push_notification_code = queue.create(jobData).save( function(err){
