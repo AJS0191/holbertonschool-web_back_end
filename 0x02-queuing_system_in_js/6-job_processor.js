@@ -7,5 +7,8 @@ function sendNotification(phoneNumber, message) {
 }
 
 queue.process('sendNotification', (job, done) => {
+    console.log(job);
+    console.log(job.data);
+    console.log(job.data.to)
     sendNotification(job.data.to, done);
 })
