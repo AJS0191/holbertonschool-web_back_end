@@ -53,7 +53,8 @@ var queue = kue.createQueue();
 jobs.forEach(job => {
     
     var push_notification_code2 = queue.create(job).save( function(err){
-        console.log(`Notification job created: ${job.id}`)
+      console.log(job)
+      console.log(`Notification job created: ${job.id}`)
       })
       
       push_notification_code2.on('complete', function(result){
