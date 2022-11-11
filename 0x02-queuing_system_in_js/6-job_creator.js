@@ -6,14 +6,13 @@ var jobData = {
   message: 'string',
 }
 
-var push_notification_code = queue.create(jobData).save( function(err){
+var push_notification_code = queue.create('push_notification_code', {
+  phoneNumber: 'string',
+  message: 'string',
+}).save( function(err){
   console.log(`Notification job created: ${push_notification_code.id}`)
-})
-
-push_notification_code.on('complete', function(result){
+}).on('complete', function(result){
   console.log('Notification job completed');
-})
-
-push_notification_code.on('failed', function(err){
+}).on('failed', function(err){
   console.log('Notification job failed')
 })
