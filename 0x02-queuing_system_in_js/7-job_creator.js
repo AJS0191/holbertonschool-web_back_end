@@ -52,7 +52,7 @@ var queue = kue.createQueue();
   
 jobs.forEach(job => {
     
-    var push_notification_code2 = queue.create('pushjob_notification_code2', {
+    var push_notification_code2 = queue.create('push_notification_code2', {
       phoneNumber: job.phoneNumber,
       message: job.message,
     }).save( function(err){
