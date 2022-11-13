@@ -56,7 +56,6 @@ jobs.forEach(job => {
       phoneNumber: job.phoneNumber,
       message: job.message,
     }).save( function(err){
-      console.log(job)
       console.log(`Notification job created: ${push_notification_code2.id}`)
       }).on('complete', function(result){
         console.log(`Notification job ${push_notification_code2.id} completed`);
