@@ -26,7 +26,7 @@ app.get('/list_products/:itemId([0-9]+)', (req, res) => {
 import { createClient } from 'redis';
 const client = createClient();
 
-listProducts = [
+const listProducts = [
   {
     'id': 1,
     'name': 'Suitcase 250',
