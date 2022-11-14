@@ -1,7 +1,7 @@
 
 function createPushNotificationsJobs(jobs, queue){ 
-  console.log('hit function')   
-  //if (typeof(jobs) != Array){return new Error('Jobs is not an array')};
+  console.log(typeof(jobs))   
+  //if (jobs. Array){return new Error('Jobs is not an array')};
   jobs.forEach(job => {
       var push_notification_code3 = queue.create('push_notification_code3', {
         phoneNumber: job.phoneNumber,
