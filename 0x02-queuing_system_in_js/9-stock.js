@@ -26,22 +26,6 @@ app.get('/list_products/:itemId([0-9]+)', (req, res) => {
 import { createClient } from 'redis';
 const client = createClient();
 
-listProducts.forEach((item) => {
-  client.hset(item.id, 'id', item.id, print)
-  client.hset(item.id, 'name', item.name, print)
-  client.hset(item.id, 'price', item.price, print)
-  client.hset(item.id, 'stock', item.stock, print)
-  client.hset(item.id, 'reservedStock', 0, print)
-})
-
-function reserveStockById(itemId, stock) {
-  client.hset(itemId, 'reservedStock', stock, print);
-}
-
-async function getCurrentReservedStockById(itemId) {
-  return client.hget(itemId, 'reservedStock')
-}
-
 listProducts = [
   {
     'id': 1,
@@ -68,6 +52,24 @@ listProducts = [
     'stock': 5,
   }
 ]
+
+listProducts.forEach((item) => {
+  client.hset(item.id, 'id', item.id, print)
+  client.hset(item.id, 'name', item.name, print)
+  client.hset(item.id, 'price', item.price, print)
+  client.hset(item.id, 'stock', item.stock, print)
+  client.hset(item.id, 'reservedStock', 0, print)
+})
+
+function reserveStockById(itemId, stock) {
+  client.hset(itemId, 'reservedStock', stock, print);
+}
+
+async function getCurrentReservedStockById(itemId) {
+  return client.hget(itemId, 'reservedStock')
+}
+
+
 
 function getItemById(id) {
   listProducts.forEach(item => {
