@@ -1,8 +1,8 @@
-isArray = require(Array.isArray)
+
 
 function createPushNotificationsJobs(jobs, queue){ 
   console.log(isArray(jobs))
-  if (isArray(jobs) == false){throw new Error('Jobs is not an array')};
+  if (Array.isArray(jobs) == false){throw new Error('Jobs is not an array')};
   jobs.forEach(job => {
       var push_notification_code3 = queue.create('push_notification_code3', {
         phoneNumber: job.phoneNumber,
