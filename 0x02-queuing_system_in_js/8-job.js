@@ -16,4 +16,4 @@ function createPushNotificationsJobs(jobs, queue){
         })
   });
 }
-module.exports = createPushNotificationsJobs
+module.exports = createPushNotificationsJobs()
