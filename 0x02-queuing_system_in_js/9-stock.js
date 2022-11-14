@@ -10,7 +10,7 @@ app.get('/list_products', (req, res) => {
 })
 
 app.get('/list_products/:itemId([0-9]+)', (req, res) => {
-  item = getItemById(req.params.itemId);
+  var item = getItemById(req.params.itemId);
   if (item == null){
     res.send(JSON.stringify({"status":"Product not found"}))
   }
