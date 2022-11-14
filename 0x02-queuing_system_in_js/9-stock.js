@@ -2,8 +2,8 @@ const express = require('express')
 const app = express()
 const port = 1245
 
-app.listen(port, () => {
-console.log("I'm listening...")})
+var server = app.listen(port, () => {
+  console.log("I'm listening...")})
 
 app.get('/list_products', (req, res) => {
   res.send(JSON.stringify(listProducts))
