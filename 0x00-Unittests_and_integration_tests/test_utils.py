@@ -37,4 +37,3 @@ class TestAccessNestedMap(TestCase):
             with patch.object(utils.requests, 'get',
                               return_value=tPayload) as mGet:
                 self.assertEqual(get_json(tUrl), tPayload)
-                mGet.assert_called_once_with(tUrl)
