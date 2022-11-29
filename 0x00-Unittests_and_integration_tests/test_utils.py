@@ -32,7 +32,6 @@ class TestAccessNestedMap(TestCase):
             ("http://example.com", {"payload": True}),
             ("http://holberton.io", {"payload": False})
         ])
-        @patch('utils.request.get')
         def test_get_json(self, tUrl, tPayload):
             """testing that get_json gets the correct payload"""
             self.assertEqual(get_json(tUrl), tPayload)
