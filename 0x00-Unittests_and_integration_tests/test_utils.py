@@ -2,7 +2,7 @@
 """the module contains unit testing"""
 from unittest import TestCase
 from parameterized import parameterized
-from utils import access_nested_map, get_json
+from utils import access_nested_map, get_json, memoize
 from unittest.mock import patch
 import utils
 
@@ -35,6 +35,23 @@ class TestAccessNestedMap(TestCase):
         @patch('utils.request.get')
         def test_get_json(self, tUrl, tPayload):
             """testing that get_json gets the correct payload"""
-            with patch.object(utils.requests, 'get',
-                              return_value=tPayload) as mGet:
-                self.assertEqual(get_json(tUrl), tPayload)
+            self.assertEqual(get_json(tUrl), tPayload)
+
+
+class TestMemoize(TestCase):
+    """testing memoization"""
+    def test_memoize():
+        """memoize test"""
+        class TestClass:
+
+            def a_method(self):
+                return 42
+
+            @memoize
+            def a_property(self):
+                return self.a_method()
+        with patch.object(TestClass, 'a_method') as mock_a:
+            memoTest = TestClass()
+            memoTest.a_property
+            memoTest.a_property
+            mock_a.assert_called_once()
