@@ -40,7 +40,7 @@ class TestAccessNestedMap(TestCase):
 
 class TestMemoize(TestCase):
     """testing memoization"""
-    def test_memoize():
+    def test_memoize(self):
         """memoize test"""
         class TestClass:
 
